@@ -11,6 +11,7 @@ $grass: #588e09;
 $deadgrass: #bcbe32;
 $firetruck: #f44336;
 $brightgrass: #9ac620;
+$lightgrass: #f3f7e4;
 $charcoal: #1c1c1c;
 
 /*************************************************************************************
@@ -179,6 +180,52 @@ header {
   }
 }
 
+.quote {
+  background-color: $lightgrass;
+  border-radius: 4px;
+  padding-bottom: 20px;
+  h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    padding: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    color: black;
+    span {
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+  .satisfaction {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+  }
+  .giveusacall {
+    text-align: center;
+    max-width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+  .number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: $firetruck;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    margin-top: -6px;
+    /* Safari */
+    -webkit-transform: rotate(-4deg);
+    /* Firefox */
+    -moz-transform: rotate(-4deg);
+    /* IE */
+    -ms-transform: rotate(-4deg);
+    /* Opera */
+    -o-transform: rotate(-4deg);
+  }
+}
+
 .footer {
   background-color: $charcoal;
   padding-top: 20px;
@@ -198,7 +245,6 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: white;
-    float: left;
     font-weight: 600;
     margin-top: -6px;
     float: right;
