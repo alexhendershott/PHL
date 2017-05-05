@@ -30,6 +30,14 @@ body {
 }
 
 /*************************************************************************************
+* Sizes
+*************************************************************************************/
+$xsmall: 480px;
+$small: 768px;
+$medium: 1024px;
+$large: 1280px;
+
+/*************************************************************************************
 * Navigation
 *************************************************************************************/
 
@@ -37,16 +45,43 @@ header {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: white;
+  @media (max-width: $medium) {
+    padding-top: 46px;
+    padding-bottom: 10px;
+  }
+}
+
+.mobile-header {
+  background: $firetruck;
+  text-align: center;
+  color: white;
+  padding: 4px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 9999;
+  display: none;
+  @media (max-width: $medium) {
+    display: block;
+  }
 }
 
 .navigation {
   .logo-img {
     float: left;
     display: block;
+    @media (max-width: $medium) {
+      float: none;
+      margin: 0 auto;
+    }
   }
   .logo-text {
     float: left;
     display: block;
+    @media (max-width: $medium) {
+      text-align: center;
+      float: none;
+    }
     h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 38px;
@@ -68,6 +103,9 @@ header {
   .calltoday {
     .calltoday-img {
       float: right;
+      @media (max-width: $medium) {
+        display: none;
+      }
     }
     span {
       font-family: 'Montserrat', sans-serif;
@@ -77,6 +115,9 @@ header {
       font-weight: 600;
       margin-top: -16px;
       float: right;
+      @media (max-width: $medium) {
+        display: none;
+      }
     }
   }
 }
@@ -88,6 +129,10 @@ header {
   background-position: center center;
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  @media (max-width: $medium) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
@@ -95,8 +140,14 @@ header {
     text-transform: uppercase;
     font-weight: 600;
     margin: 0px;
+    @media (max-width: $medium) {
+      text-align: center;
+    }
     span {
       color: $brightgrass;
+      @media (max-width: $medium) {
+        text-align: center;
+      }
     }
   }
   h2 {
@@ -106,6 +157,9 @@ header {
     color: white;
     margin-top: -6px;
     margin-bottom: 30px;
+    @media (max-width: $medium) {
+      text-align: center;
+    }
   }
   a {
     font-family: 'Open Sans', sans-serif;
@@ -114,6 +168,11 @@ header {
     background-color: $brightgrass;
     border-radius: 4px;
     font-weight: 600;
+    @media (max-width: $medium) {
+      margin: 0 auto;
+      display: block;
+      width: 240px;
+    }
     &:hover {
       background-color: $grass;
     }
@@ -123,6 +182,10 @@ header {
 .main-copy {
   margin-top: 60px;
   margin-bottom: 60px;
+  @media (max-width: $medium) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
@@ -131,11 +194,18 @@ header {
     margin: 0px;
     line-height: 54px;
     margin-bottom: 30px;
+    @media (max-width: $medium) {
+      font-size: 38px;
+      line-height: 44px;
+    }
   }
   p {
     font-family: 'Open Sans', sans-serif;
     font-size: 22px;
     color: black;
+    @media (max-width: $medium) {
+      font-size: 18px;
+    }
   }
   .feature-block {
     margin-top: 20px;
@@ -168,6 +238,9 @@ header {
     margin-top: 30px;
     padding-left: 0px;
     padding-right: 0px;
+    @media (max-width: $medium) {
+      margin-bottom: 20px;
+    }
     h3 {
       font-family: 'Open Sans', sans-serif;
       font-size: 28px;
@@ -183,7 +256,7 @@ header {
 .quote {
   background-color: $lightgrass;
   border-radius: 4px;
-  padding-bottom: 20px;
+  padding-bottom: 34px;
   h4 {
     font-family: 'Open Sans', sans-serif;
     font-size: 24px;
@@ -200,12 +273,19 @@ header {
     position: absolute;
     right: -40px;
     top: -40px;
+    width: 36%;
+    @media (max-width: $medium) {
+      display: none;
+    }
   }
   .giveusacall {
     text-align: center;
-    max-width: 50%;
+    max-width: 65%;
     margin: 0 auto;
     display: block;
+    @media (max-width: $medium) {
+      display: none;
+    }
   }
   .number {
     font-family: 'Montserrat', sans-serif;
@@ -223,13 +303,72 @@ header {
     -ms-transform: rotate(-4deg);
     /* Opera */
     -o-transform: rotate(-4deg);
+    @media (max-width: $medium) {
+      display: none;
+    }
   }
+}
+
+input[type=text], input[type=email], select {
+  background: white;
+  border: 2px solid $brightgrass;
+  border-radius: 4px;
+  height: 46px !important;
+  font-size: 16px;
+  padding-left: 12px;
+  font-family: 'Open Sans', sans-serif;
+  color: $charcoal;
+}
+
+input[type=button] {
+  background: $grass;
+  height: 46px !important;
+  border-radius: 2px;
+  border: 0px;
+  width: 100% !important;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  transition: background-color 300ms ease-out;
+  &:hover {
+    background: $charcoal;
+    cursor: pointer;
+  }
+}
+
+.nf-error .ninja-forms-field {
+  border: 2px solid $firetruck !important;
+}
+
+.nf-before-form-content {
+  display: none !important;
+}
+
+.form {
+  padding: 0px 20px 0px 20px;
+}
+
+.nf-field-label label {
+  font-weight: bold !important;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif !important;
+  margin-top: -10px !important;
+}
+
+.nf-response-msg {
+  margin-bottom: 10px;
 }
 
 .footer {
   background-color: $charcoal;
   padding-top: 20px;
   padding-bottom: 20px;
+  @media (max-width: $medium) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   p {
     color: rgba(255,255,255,.3);
     font-family: 'Open Sans', sans-serif;
@@ -240,6 +379,9 @@ header {
   }
   .footer-calltoday {
     float: right;
+    @media (max-width: $medium) {
+      display: none;
+    }
   }
   span {
     font-family: 'Montserrat', sans-serif;
@@ -248,5 +390,8 @@ header {
     font-weight: 600;
     margin-top: -6px;
     float: right;
+    @media (max-width: $medium) {
+      display: none;
+    }
   }
 }
